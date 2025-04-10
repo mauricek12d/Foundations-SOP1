@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insomnia - Movie Review Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+        <section class="movie-highlight">
+          <img src="Images/Insomnia.jpg" alt="Insomnia" />
+          <div class="description">
+            <h2>Insomnia (2002)</h2>
+            <p>Directed by Christopher Nolan, Insomnia stars Al Pacino as LAPD detective Will Dormer, who is sent to a remote Alaskan town to solve a teenage girl's murder. As he deals with endless daylight and pressure from an internal affairs investigation, Dormer spirals into guilt and paranoia. Robin Williams delivers a haunting performance as the suspect in this gripping psychological thriller.</p>
+          </div>
+        </section>
+
+        <section class="review-form">
+            <h3>Leave a Review</h3>
+            <form id="reviewForm">
+              <input type="text" id="name" placeholder="Your Name" />
+              <input type="text" id="movie" placeholder="Movie Title" />
+              <textarea id="review" placeholder="Your Review"></textarea>
+              <button type="submit">Submit Review</button>
+            </form>
+          </section>
+       </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
