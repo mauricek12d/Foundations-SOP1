@@ -32,7 +32,12 @@ body {
   
   
   .review-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   input, textarea {
@@ -41,4 +46,50 @@ body {
     margin-bottom: 1rem;
     padding: 0.5rem;
   }
+  
+  .description h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .description p {
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .review-form h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .review-form button {
+    background: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  .review-form button:hover {
+    background: #555;
+  }
+  .review-list {
+    padding: 2rem;
+  }
+
+  body.contact-page {
+    background-image: url("Images/Popcorn.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+  }
+
+  .review-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
   
