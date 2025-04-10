@@ -23,6 +23,13 @@ body {
     padding: 2rem;
     gap: 2rem;
   }
+
+  .movie-highlight img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
   
   .review-form {
     padding: 2rem;
