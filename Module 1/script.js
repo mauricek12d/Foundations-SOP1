@@ -1,3 +1,4 @@
+// This script handles the form submission for the movie review application
 document.getElementById('reviewForm').addEventListener('submit', function(e) {
     e.preventDefault();
   
@@ -9,7 +10,23 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
       alert('Please fill in all fields.');
       return;
     }
-  
-    alert(`Thank you for your review, ${name}!`);
-  });
-  
+
+    fetch('http://localhost:3000/api/reviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, movie, review })
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert(`Thank you for your review, ${data.data.name}!`);
+      console.log('Review submitted:', data);
+    }
+    )
+    .catch(err => {
+      console.error('Error submitting review:', err);
+      alert('There was an error submitting your review. Please try again later.');
+    });
+  }
+);
