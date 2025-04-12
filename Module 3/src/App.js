@@ -1,38 +1,30 @@
 import React from 'react';
-import ReviewForm from '../components/ReviewForm';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Reviews from './pages/Reviews';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <>
+    <Router>
       <header>
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/reviews">Reviews</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/reviews">Reviews</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <section className="movie-highlight">
-          <img src="/Images/Inception-movie.jpg" alt="Inception" />
-          <div className="description">
-            <h2>Inception</h2>
-            <p>
-              Directed by Christopher Nolan, Inception is about the character Dom Cobb (Leonardo DiCaprio)
-              who is a thief with the rare ability to enter people's dreams and steal their secrets from
-              their subconscious. His skill has made him a hot commodity in the world of corporate espionage
-              but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered
-              a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the
-              perfect crime, but a dangerous enemy anticipates Cobb's every move.
-            </p>
-          </div>
-        </section>
-
-        <ReviewForm />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
-    </>
+    </Router>
   );
 }
 

@@ -1,38 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import ReviewCard from '../components/ReviewCard';  
-import { fetchReviews } from '../services/reviewService '; 
+import React from 'react';
+import ReviewForm from '../components/ReviewForm';
 
 function Home() {
-    const [reviews, setReviews] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const getReviews = async () => {
-            try {
-                const data = await fetchReviews();
-                setReviews(data);
-            } catch (error) {
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        getReviews();
-    }, []);
-
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
-
-    return (
-        <div>
-            <h1>Product Reviews</h1>
-            {reviews.map(review => (
-                <ReviewCard key={review.id} review={review} />
-            ))}
+  return (
+    <>
+      <section className="movie-highlight">
+        <img src="/Images/Inception-movie.jpg" alt="Inception" />
+        <div className="description">
+          <h2>Inception</h2>
+          <p>Directed by Christopher Nolan, 
+            Inception is about the character Dom Cobb (Leonardo DiCaprio) who is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. 
+            His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. 
+            Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.
+            </p>
         </div>
-    );
-}
-export default Home;
+      </section>
 
+      <ReviewForm />
+    </>
+  );
+}
+
+export default Home;
