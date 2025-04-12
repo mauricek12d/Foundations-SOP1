@@ -9,8 +9,8 @@ app.use(cors()); // Allows the frontend to access the backend
 app.use(express.json()); // Allows the server to parse JSON data
 
 // The GET route
-app.get('/api/hello', (_req, res) => {
-  res.json({ message: 'Hello World' });
+app.get('/', (_req, res) => {
+  res.send('Welcome to the Movie Review API!');
 });
 
 // The POST route
