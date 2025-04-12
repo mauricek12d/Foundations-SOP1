@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/App.css'; // Make sure you import your CSS if it exists
+import ReviewForm from '../components/ReviewForm';
 
 function App() {
   return (
@@ -30,15 +30,7 @@ function App() {
           </div>
         </section>
 
-        <section className="review-form">
-          <h3>Leave a Review</h3>
-          <form id="reviewForm">
-            <input type="text" id="name" placeholder="Your Name" />
-            <input type="text" id="movie" placeholder="Movie Title" />
-            <textarea id="review" placeholder="Your Review"></textarea>
-            <button type="submit">Submit Review</button>
-          </form>
-        </section>
+        <ReviewForm />
       </main>
     </>
   );
