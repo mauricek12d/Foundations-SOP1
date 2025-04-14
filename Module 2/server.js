@@ -10,7 +10,22 @@ app.use(express.json()); // Allows the server to parse JSON data
 
 // The GET route
 app.get('/', (_req, res) => {
-  res.send('Welcome to the Movie Review API!');
+  const filePath = path.join(__dirname, 'reviews.json');
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading reviews:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+
+    try {
+      const reviews = JSON.parse(data || '[]');
+      res.json(reviews);
+    } catch (parseErr) {
+      console.error('Error parsing JSON:', parseErr);
+      res.status(500).json({ error: 'Failed to parse reviews file' });
+    }
+  });
 });
 
 // The POST route

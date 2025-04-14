@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -6,6 +6,13 @@ function Contact() {
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    document.body.classList.add('contact-page');
+    return () => {
+      document.body.classList.remove('contact-page');
+    };
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

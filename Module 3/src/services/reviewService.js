@@ -1,21 +1,30 @@
-export const fetchReviews = async () => {   
-    const response = await fetch('https://api.example.com/reviews');
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
-    };
+const API_URL = '/api/reviews';
 
-export const addReview = async (review) => {
-    const response = await fetch('https://api.example.com/reviews', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(review),
+export const submitReview = async (reviewData) => {
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewData)
     });
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
+
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error('Error submitting review:', err);
+    throw err;
+  }
+};
+
+export const getReviews = async () => {
+  try {
+    const response = await fetch(API_URL); // Make sure your backend has a GET route!
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error('Error fetching reviews:', err);
+    throw err;
+  }
 };

@@ -1,11 +1,12 @@
 import React from 'react';
 import ReviewForm from '../components/ReviewForm';
+import inceptionPoster from '../Images/Inception-movie.jpg'; 
 
 function Home() {
   return (
     <>
       <section className="movie-highlight">
-        <img src="/Images/Inception-movie.jpg" alt="Inception" />
+        <img src={inceptionPoster} alt="Inception" />
         <div className="description">
           <h2>Inception</h2>
           <p>Directed by Christopher Nolan, 

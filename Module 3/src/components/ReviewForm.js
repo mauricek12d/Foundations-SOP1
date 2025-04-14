@@ -24,7 +24,7 @@ function ReviewForm() {
         }
 
         try {
-            const res = await fetch('https://api/reviews', {
+            const res = await fetch('/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
