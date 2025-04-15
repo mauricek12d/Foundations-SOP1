@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken'); // npm install jsonwebtoken
 
 // Middleware to check if the user is authenticated
 const authMiddleware = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+  const authHeader = req.headers.authorization; 
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return res.status(401).json({ error: 'Not Authorized' });
