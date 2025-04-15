@@ -1,11 +1,12 @@
 const Post = require('../models/post');
+const errorHandling = require('../utils/errorHandling');
 
 const getAllPosts = async (_req, res) => {
   try {
     const posts = await Post.find().sort({ createdAt: -1 });
     res.json(posts);
   } catch (err) {
-    res.status(500).json({ error: 'Server error' });
+    errorHandling(res, err, 500, 'Failed to load posts');
   }
 };
 
