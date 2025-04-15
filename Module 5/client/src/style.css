@@ -79,7 +79,7 @@ body {
   }
 
   body.contact-page {
-    background-image: url('../Images/Popcorn.jpg');
+    background-image: url('./images/Popcorn.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

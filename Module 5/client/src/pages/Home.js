@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewForm from '../components/ReviewForm';
-import inceptionPoster from '../Images/Inception-movie.jpg'; 
+import inceptionPoster from '../images/Inception-movie.jpg'; 
 
 function Home() {
   return (
