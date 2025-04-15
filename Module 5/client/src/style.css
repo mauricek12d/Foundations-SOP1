@@ -79,7 +79,7 @@ body {
   }
 
   body.contact-page {
-    background-image: url("./Images/Popcorn.jpg");
+    background-image: url('../Images/Popcorn.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -92,4 +92,22 @@ body {
     gap: 1.2rem;
   }
   
+  .active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+  }
   
+  .review-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .movie-highlight {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

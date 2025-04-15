@@ -20,9 +20,11 @@ export const submitReview = async (reviewData) => {
 
 export const getReviews = async () => {
   try {
-    const response = await fetch(API_URL); 
-    const data = await response.json();
-    return data;
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return await response.json();
   } catch (err) {
     console.error('Error fetching reviews:', err);
     throw err;
