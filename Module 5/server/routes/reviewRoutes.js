@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');
 
-router.get('/reviews', async (_req, res) => {
+router.get('/', async (_req, res) => {
   try {
     const reviews = await Post.find();
     res.json(reviews);
@@ -11,7 +11,7 @@ router.get('/reviews', async (_req, res) => {
   }
 });
 
-router.post('/reviews', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newReview = new Post(req.body);
     const saved = await newReview.save();
